@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Stack E-Commerce Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <h1>⚡ TechShop Online</h1>
+            <div class="cart-status">🛒 Cart: <span id="cartCount">0</span> items</div>
+        </div>
+    </header>
+
+    <main class="store-container">
+        <h2>Featured Catalog (Connected to Spring Boot API)</h2>
+        <div class="product-grid" id="productGrid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="tag">Electronics</div>
+                <h3>Wireless Laptop Mouse</h3>
+                <p class="price">₹899.00</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="tag">Electronics</div>
+                <h3>Gaming Keyboard</h3>
+                <p class="price">₹2,499.00</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="tag">Furniture</div>
+                <h3>Ergonomic Office Chair</h3>
+                <p class="price">₹5,499.00</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let count = 0;
+        function addToCart() {
+            count++;
+            document.getElementById('cartCount').innerText = count;
+            alert('Item added! State updated dynamically. Ready to trigger Spring Boot Order endpoint via REST API API.');
+        }
+    </script>
+</body>
+</html>
